@@ -113,142 +113,254 @@ public class Persona {
         this.notas = notas;
     }
 
-    /** @return Nombre de la persona */
+    /**
+     * Obtiene el nombre de la persona.
+     * 
+     * @return nombre de la persona
+     */
     public String getNombre() {
         return nombre;
     }
 
-    /** @param nombre Nombre de la persona */
+    /**
+     * Establece el nombre de la persona.
+     * 
+     * @param nombre nuevo nombre de la persona
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    /** @return Apellido paterno */
+    /**
+     * Obtiene el apellido paterno de la persona.
+     * 
+     * @return apellido paterno
+     */
     public String getApellido_Paterno() {
         return apellido_Paterno;
     }
 
-    /** @param apellido_Paterno Apellido paterno */
+    /**
+     * Establece el apellido paterno de la persona.
+     * 
+     * @param apellido_Paterno nuevo apellido paterno
+     */
     public void setApellido_Paterno(String apellido_Paterno) {
         this.apellido_Paterno = apellido_Paterno;
     }
 
-    /** @return Apellido materno */
+    /**
+     * Obtiene el apellido materno de la persona.
+     * 
+     * @return apellido materno
+     */
     public String getApellido_Materno() {
         return apellido_Materno;
     }
 
-    /** @param apellido_Materno Apellido materno */
+    /**
+     * Establece el apellido materno de la persona.
+     * 
+     * @param apellido_Materno nuevo apellido materno
+     */
     public void setApellido_Materno(String apellido_Materno) {
         this.apellido_Materno = apellido_Materno;
     }
 
-    /** @return Dirección o direcciones */
+    /**
+     * Obtiene la dirección o direcciones de la persona.
+     * 
+     * @return direcciones de la persona
+     */
     public String getDirecciones() {
         return direcciones;
     }
 
-    /** @param direcciones Dirección o direcciones */
+    /**
+     * Establece la dirección o direcciones de la persona.
+     * 
+     * @param direcciones nuevas direcciones
+     */
     public void setDirecciones(String direcciones) {
         this.direcciones = direcciones;
     }
 
-    /** @return Teléfono fijo */
+    /**
+     * Obtiene el teléfono fijo de la persona.
+     * 
+     * @return teléfono fijo
+     */
     public String getTelefono() {
         return telefono;
     }
 
-    /** @param telefono Teléfono fijo */
+    /**
+     * Establece el teléfono fijo de la persona.
+     * 
+     * @param telefono nuevo número de teléfono fijo
+     */
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    /** @return Teléfono móvil */
+    /**
+     * Obtiene el número de móvil de la persona.
+     * 
+     * @return número de móvil
+     */
     public String getMovil() {
         return movil;
     }
 
-    /** @param movil Teléfono móvil */
+    /**
+     * Establece el número de móvil de la persona.
+     * 
+     * @param movil nuevo número de móvil
+     */
     public void setMovil(String movil) {
         this.movil = movil;
     }
 
-    /** @return Correo electrónico */
+    /**
+     * Obtiene el correo electrónico de la persona.
+     * 
+     * @return correo electrónico
+     */
     public String getC_electronico() {
         return c_electronico;
     }
 
-    /** @param c_electronico Correo electrónico */
+    /**
+     * Establece el correo electrónico de la persona.
+     * 
+     * @param c_electronico nuevo correo electrónico
+     */
     public void setC_electronico(String c_electronico) {
         this.c_electronico = c_electronico;
     }
 
-    /** @return Compañía */
+    /**
+     * Obtiene la compañía en la que trabaja la persona.
+     * 
+     * @return compañía
+     */
     public String getCompania() {
         return compania;
     }
 
-    /** @param compania Compañía */
+    /**
+     * Establece la compañía en la que trabaja la persona.
+     * 
+     * @param compania nueva compañía
+     */
     public void setCompania(String compania) {
         this.compania = compania;
     }
 
-    /** @return Puesto */
+    /**
+     * Obtiene el puesto laboral de la persona.
+     * 
+     * @return puesto de la persona
+     */
     public String getPuesto() {
         return puesto;
     }
 
-    /** @param puesto Puesto */
+    /**
+     * Establece el puesto laboral de la persona.
+     * 
+     * @param puesto nuevo puesto de la persona
+     */
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
 
-    /** @return URL */
+    /**
+     * Obtiene la URL personal o profesional de la persona.
+     * 
+     * @return URL
+     */
     public String getUrl() {
         return url;
     }
 
-    /** @param url URL */
+    /**
+     * Establece la URL personal o profesional de la persona.
+     * 
+     * @param url nueva URL
+     */
     public void setUrl(String url) {
         this.url = url;
     }
 
-    /** @return Cuenta de Facebook */
+    /**
+     * Obtiene la cuenta de Facebook de la persona.
+     * 
+     * @return cuenta de Facebook
+     */
     public String getFbk() {
         return fbk;
     }
 
-    /** @param fbk Cuenta de Facebook */
+    /**
+     * Establece la cuenta de Facebook de la persona.
+     * 
+     * @param fbk nueva cuenta de Facebook
+     */
     public void setFbk(String fbk) {
         this.fbk = fbk;
     }
 
-    /** @return Cuenta de Instagram */
+    /**
+     * Obtiene la cuenta de Instagram de la persona.
+     * 
+     * @return cuenta de Instagram
+     */
     public String getIg() {
         return ig;
     }
 
-    /** @param ig Cuenta de Instagram */
+    /**
+     * Establece la cuenta de Instagram de la persona.
+     * 
+     * @param ig nueva cuenta de Instagram
+     */
     public void setIg(String ig) {
         this.ig = ig;
     }
 
-    /** @return Lista de citas */
+    /**
+     * Obtiene la lista de citas de la persona.
+     * 
+     * @return lista de citas
+     */
     public List<Cita> getCitas() {
         return citas;
     }
 
-    /** @param citas Lista de citas */
+    /**
+     * Establece la lista de citas de la persona.
+     * 
+     * @param citas nueva lista de citas
+     */
     public void setCitas(List<Cita> citas) {
         this.citas = citas;
     }
 
-    /** @return Lista de notas */
+    /**
+     * Obtiene la lista de notas de la persona.
+     * 
+     * @return lista de notas
+     */
     public List<Nota> getNotas() {
         return notas;
     }
 
-    /** @param notas Lista de notas */
+    /**
+     * Establece la lista de notas de la persona.
+     * 
+     * @param notas nueva lista de notas
+     */
     public void setNotas(List<Nota> notas) {
         this.notas = notas;
     }
