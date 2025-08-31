@@ -364,4 +364,24 @@ public class Persona {
     public void setNotas(List<Nota> notas) {
         this.notas = notas;
     }
+
+    @Override
+public String toString() {
+    return "Persona {" +
+            "nombre='" + nombre + '\'' +
+            ", apellido_Paterno='" + apellido_Paterno + '\'' +
+            ", apellido_Materno='" + apellido_Materno + '\'' +
+            ", direcciones='" + direcciones + '\'' +
+            ", telefono='" + telefono + '\'' +
+            ", movil='" + movil + '\'' +
+            ", c_electronico='" + c_electronico + '\'' +
+            ", compania='" + compania + '\'' +
+            ", puesto='" + puesto + '\'' +
+            ", url='" + url + '\'' +
+            ", fbk='" + fbk + '\'' +
+            ", ig='" + ig + '\'' +
+            ", citas=" + citas +
+            ", notas=" + notas +
+            '}';
+    }
 }

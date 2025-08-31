@@ -87,4 +87,11 @@ public class Cita {
     public void setHora(LocalTime hora) {
         this.hora = hora;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder c = new StringBuilder();
+        c.append(this.titulo).append(" es el dia ").append(this.fecha).append(" a las ").append(hora);
+        return c.toString();
+    }
 }
