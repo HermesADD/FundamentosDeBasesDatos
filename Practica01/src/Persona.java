@@ -188,6 +188,7 @@ public class Persona {
             Objects.toString(apellidoMaterno,"")).trim();
     }
 
+    @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("Nombre: ").append(nombreCompleto())
