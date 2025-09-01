@@ -1,7 +1,3 @@
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 /**
  * Clase que representa una Cita de una agenda electrónica.
  */
@@ -12,14 +8,14 @@ public class Cita {
     private String titulo;
 
     /**
-     * Fecha en la que ocurrirá la cita.
+     * Fecha en la que ocurrirá la cita. e.g., 2025-09-01
      */
-    private LocalDate fecha;
+    private String fecha;
 
     /**
-     * Hora en la que ocurrirá la cita.
+     * Hora en la que ocurrirá la cita. e.g. 14:30
      */
-    private LocalTime hora;
+    private String hora;
 
     /**
      * Constructor de la clase Cita.
@@ -28,11 +24,16 @@ public class Cita {
      * @param fecha  Fecha de la cita
      * @param hora   Hora de la cita
      */
-    public Cita(String titulo, LocalDate fecha, LocalTime hora) {
+    public Cita(String titulo, String fecha, String hora) {
         this.titulo = titulo;
         this.fecha = fecha;
         this.hora = hora;
     }
+
+    /**
+     * Constructor vacío
+     */
+    public Cita(){}
 
     /**
      * Obtiene el título de la cita.
@@ -40,7 +41,7 @@ public class Cita {
      * @return título de la cita
      */
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     /**
@@ -57,8 +58,8 @@ public class Cita {
      * 
      * @return fecha de la cita
      */
-    public LocalDate getFecha() {
-        return fecha;
+    public String getFecha() {
+        return this.fecha;
     }
 
     /**
@@ -66,7 +67,7 @@ public class Cita {
      * 
      * @param fecha nueva fecha de la cita
      */
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -75,8 +76,8 @@ public class Cita {
      * 
      * @return hora de la cita
      */
-    public LocalTime getHora() {
-        return hora;
+    public String getHora() {
+        return this.hora;
     }
 
     /**
@@ -84,14 +85,15 @@ public class Cita {
      * 
      * @param hora nueva hora de la cita
      */
-    public void setHora(LocalTime hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
     @Override
-    public String toString(){
-        StringBuilder c = new StringBuilder();
-        c.append(this.titulo).append(" es el dia ").append(this.fecha).append(" a las ").append(hora);
-        return c.toString();
+    public String toString() {
+        return String.format("%s | %s %s", 
+            titulo == null ? "" : titulo, 
+            fecha == null ? "" : fecha, 
+            hora == null ? "" : hora).trim();
     }
 }
