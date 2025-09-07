@@ -6,7 +6,7 @@ import java.util.Locale;
 /**
  * Clase que se utiliza para generar e imprimir un calendario mensual.
  * 
- * @author Hermes Alberto Delgado Diaz
+ * @author Hermes Alberto Delgado Diaz 319258613
  */
 public class Calendario {
     

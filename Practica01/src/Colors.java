@@ -1,3 +1,11 @@
+/**
+ * Clase de utilidad que contiene códigos ANSI para dar formato a la salida de la terminal.
+ * 
+ * Permite cambiar el color del texto y el fondo, así como aplicar estilos
+ * como negrita, cursiva, subrayado, etc.
+ *
+ * @author Hermes Alberto Delgado Díaz 319258613
+ */
 public class Colors {
     /**
      * Modifica el color de la fuente a negro.

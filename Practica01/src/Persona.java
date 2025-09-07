@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Clase que representa a una persona con detalles personales y laborales.
  * 
- * @author Hermes Alberto Delgado Díaz
+ * @author Hermes Alberto Delgado Díaz 319258613
  */
 public class Persona {
 

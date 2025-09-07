@@ -10,7 +10,7 @@ import java.util.List;
  * de personas. La persistencia de los datos se maneja a través de la clase
  * {@link Archivo}.
  * 
- * @author Hermes Alberto Delgado Díaz
+ * @author Hermes Alberto Delgado Díaz 319258613
  * @see Persona
  * @see Archivo
  */

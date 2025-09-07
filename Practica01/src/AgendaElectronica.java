@@ -1,5 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Clase principal que actúa como la interfaz de usuario para la agenda electrónica.
+ *
+ * @author Hermes Alberto Delgado Díaz 319258613
+ * @see LibroDirecciones
+ * @see Persona
+ * @see Cita
+ * @see Nota
+ * @see Calendario
+ * @see Colors
+ */
 public class AgendaElectronica {
     /**
      * Objeto Scanner para leer la entrada del usuario desde la consola.

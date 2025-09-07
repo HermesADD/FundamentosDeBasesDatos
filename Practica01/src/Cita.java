@@ -1,7 +1,7 @@
 /**
  * Clase que representa una Cita de una agenda electrónica.
  * 
- * @author Hermes Alberto Delgado Díaz 
+ * @author Hermes Alberto Delgado Díaz 319258613
  */
 public class Cita {
     /**

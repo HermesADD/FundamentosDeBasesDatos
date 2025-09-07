@@ -1,7 +1,7 @@
 /**
  * Clase que representa una nota simple que contiene una descripción.
  * 
- * @author Hermes Alberto Delgado Díaz
+ * @author Hermes Alberto Delgado Díaz 319258613
  */
 public class Nota {
 

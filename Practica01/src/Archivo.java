@@ -6,7 +6,7 @@ import java.util.*;
  * desde y hacia un archivo de texto, utilizando un formato delimitado por el
  * carácter de barra vertical (|).
  *
- * @author Hermes Alberto Delgado Díaz
+ * @author Hermes Alberto Delgado Díaz 319258613
  */
 public class Archivo {
 
