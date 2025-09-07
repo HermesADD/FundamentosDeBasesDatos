@@ -1,5 +1,7 @@
 /**
  * Clase que representa una Cita de una agenda electrónica.
+ * 
+ * @author Hermes Alberto Delgado Díaz 
  */
 public class Cita {
     /**
@@ -18,7 +20,7 @@ public class Cita {
     private String hora;
 
     /**
-     * Constructor de la clase Cita.
+     * Construye un nuevo objeto Cita
      *
      * @param titulo Título o descripción de la cita
      * @param fecha  Fecha de la cita
@@ -31,14 +33,13 @@ public class Cita {
     }
 
     /**
-     * Constructor vacío
+     * Construye un nuevo objeto Cita vacío con valores predeterminados
      */
     public Cita(){}
 
     /**
      * Obtiene el título de la cita.
-     * 
-     * @return título de la cita
+     * @return El título de la cita.
      */
     public String getTitulo() {
         return this.titulo;
@@ -46,8 +47,7 @@ public class Cita {
 
     /**
      * Establece el título de la cita.
-     * 
-     * @param titulo nuevo título de la cita
+     * @param titulo El nuevo título de la cita.
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -55,8 +55,7 @@ public class Cita {
 
     /**
      * Obtiene la fecha de la cita.
-     * 
-     * @return fecha de la cita
+     * @return La fecha de la cita.
      */
     public String getFecha() {
         return this.fecha;
@@ -64,8 +63,7 @@ public class Cita {
 
     /**
      * Establece la fecha de la cita.
-     * 
-     * @param fecha nueva fecha de la cita
+     * @param fecha La nueva fecha de la cita.
      */
     public void setFecha(String fecha) {
         this.fecha = fecha;
@@ -73,8 +71,7 @@ public class Cita {
 
     /**
      * Obtiene la hora de la cita.
-     * 
-     * @return hora de la cita
+     * @return La hora de la cita.
      */
     public String getHora() {
         return this.hora;
@@ -82,8 +79,7 @@ public class Cita {
 
     /**
      * Establece la hora de la cita.
-     * 
-     * @param hora nueva hora de la cita
+     * @param hora La nueva hora de la cita.
      */
     public void setHora(String hora) {
         this.hora = hora;

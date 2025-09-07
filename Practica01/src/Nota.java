@@ -1,40 +1,42 @@
 /**
- * Clase que representa una Nota dentro de una agenda electrónica.
+ * Clase que representa una nota simple que contiene una descripción.
+ * 
+ * @author Hermes Alberto Delgado Díaz
  */
 public class Nota {
 
     /**
-     * Descripción de la nota en forma de texto.
+     * La descripción o el contenido de la nota.
      */
     private String descripcion;
 
     /**
-     * Constructor de la clase Nota.
+     * Construye un nuevo objeto Nota con la descripción proporcionada.
      *
-     * @param nota contenido inicial de la nota
+     * @param descripcion La cadena de texto que se utilizará como contenido de la nota.
      */
     public Nota(String descripcion) {
         this.descripcion = descripcion;
     }
 
     /**
-     * Constructor vacío.
+     * Construye un objeto Nota vacío con una descripción predeterminada (null).
      */
     public Nota(){}
 
     /**
-     * Obtiene el contenido de la nota.
-     * 
-     * @return texto de la nota
+     * Obtiene la descripción o el contenido de la nota.
+     *
+     * @return La cadena que contiene la descripción de la nota.
      */
     public String getDescripcion() {
         return this.descripcion;
     }
 
     /**
-     * Establece el contenido de la nota.
-     * 
-     * @param descripcion nueva de la nota
+     * Establece o actualiza la descripción de la nota.
+     *
+     * @param descripcion La nueva cadena de texto para la descripción de la nota.
      */
     public void setDescripcion(String descripcion){
         this.descripcion = descripcion;

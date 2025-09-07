@@ -1,119 +1,161 @@
 import java.util.Scanner;
 
-/** Programa principal (main) de la Agenda Electrónica. */
 public class AgendaElectronica {
+    /**
+     * Objeto Scanner para leer la entrada del usuario desde la consola.
+     */
     private static final Scanner sc = new Scanner(System.in);
+    
+    /**
+     * Instancia de {@link LibroDirecciones} para gestionar la lista de personas.
+     */
     private static final LibroDirecciones libro = new LibroDirecciones();
 
     public static void main(String[] args) {
-        System.out.println("=== Agenda Electrónica (con archivo.txt) ===");
+        Colors.println("Bienvenid@ a mi Agenga Electrónica!!!!", Colors.HIGH_INTENSITY);
         libro.cargar();
         boolean salir = false;
         while (!salir) {
             mostrarMenu();
             String op = sc.nextLine().trim();
             switch (op) {
-                case "1" -> buscarRegistro();
-                case "2" -> agregarRegistro();
-                case "3" -> eliminarRegistro();
-                case "4" -> ponerCita();
-                case "5" -> escribirNota();
-                case "6" -> {
-                }
-                case "7" -> listarTodo();
+                case "1" -> agregarRegistro();
+                case "2" -> buscarRegistro();
+                case "3" -> modificarRegistro();
+                case "4" -> eliminarRegistro();
+                case "5" -> imprimirCalendario();
                 case "0" -> salir = true;
-                default -> System.out.println("Opción inválida");
+                default -> Colors.println("Opción inválida", Colors.RED);
             }
         }
-        System.out.println("¡Hasta luego!");
+        Colors.println("¡Nos vemos!", Colors.HIGH_INTENSITY);
     }
 
+    /**
+     * Muestra el menú principal con las opciones disponibles para el usuario.
+     */
     private static void mostrarMenu() {
-        System.out.println("\nMenú Principal:");
-        System.out.println("1. Buscar registro (persona)");
-        System.out.println("2. Agregar registro");
-        System.out.println("3. Eliminar registro");
-        System.out.println("4. Poner cita a un registro (máx 2)");
-        System.out.println("5. Escribir nota a un registro (máx 2)");
-        System.out.println("6. Imprimir calendario (año y mes)");
-        System.out.println("7. Listar todos los registros");
-        System.out.println("0. Salir");
-        System.out.print("Elige una opción: ");
+        Colors.println("\nMenú Principal:", Colors.CYAN + Colors.HIGH_INTENSITY);
+        Colors.println("1. Añadir registro", Colors.CYAN + Colors.ITALICS);
+        Colors.println("2. Buscar registro", Colors.CYAN + Colors.ITALICS);
+        Colors.println("3. Modificar registro", Colors.CYAN + Colors.ITALICS);
+        Colors.println("4. Eliminar registro", Colors.CYAN + Colors.ITALICS);
+        Colors.println("5. Imprimir calendario (año y mes)", Colors.CYAN + Colors.ITALICS);
+        Colors.println("0. Salir", Colors.CYAN + Colors.ITALICS);
+        Colors.print("Elige una opción: ", Colors.CYAN + Colors.ITALICS);
     }
 
-    private static void buscarRegistro() {
-        System.out.print("Nombre completo a buscar: ");
-        String nombre = sc.nextLine();
-        Persona p = libro.buscarPorNombre(nombre);
-        if (p == null) System.out.println("No encontrado.");
-        else System.out.println("\n--- Registro ---\n" + p + "\n-----------------");
-    }
-
+    /**
+     * Permite al usuario agregar un nuevo registro de persona.
+     */
     private static void agregarRegistro() {
         Persona p = new Persona();
-        System.out.println("== Nuevo registro ==");
-        System.out.print("Nombre(s): "); p.setNombre(sc.nextLine());
-        System.out.print("Apellido paterno: "); p.setApellidoPaterno(sc.nextLine());
-        System.out.print("Apellido materno: "); p.setApellidoMaterno(sc.nextLine());
-        System.out.print("Dirección(es): "); p.setDirecciones(sc.nextLine());
-        System.out.print("Teléfono: "); p.setTelefono(sc.nextLine());
-        System.out.print("Móvil: "); p.setMovil(sc.nextLine());
-        System.out.print("Correo: "); p.setCorreo(sc.nextLine());
-        System.out.print("Compañía: "); p.setCompania(sc.nextLine());
-        System.out.print("Puesto: "); p.setPuesto(sc.nextLine());
-        System.out.print("URL: "); p.setUrl(sc.nextLine());
-        System.out.print("Facebook (Fbk): "); p.setFbk(sc.nextLine());
-        System.out.print("Instagram (IG): "); p.setIg(sc.nextLine());
+        Colors.println("== Nuevo registro ==" , Colors.GREEN + Colors.HIGH_INTENSITY);
+        Colors.print("Nombre(s): ", Colors.GREEN); p.setNombre(sc.nextLine());
+        Colors.print("Apellido paterno: ", Colors.GREEN); p.setApellidoPaterno(sc.nextLine());
+        Colors.print("Apellido materno: ", Colors.GREEN); p.setApellidoMaterno(sc.nextLine());
+        Colors.print("Dirección(es): ", Colors.GREEN); p.setDirecciones(sc.nextLine());
+        Colors.print("Teléfono: ", Colors.GREEN); p.setTelefono(sc.nextLine());
+        Colors.print("Móvil: ", Colors.GREEN); p.setMovil(sc.nextLine());
+        Colors.print("Correo: ", Colors.GREEN); p.setCorreo(sc.nextLine());
+        Colors.print("Compañía: ", Colors.GREEN); p.setCompania(sc.nextLine());
+        Colors.print("Puesto: ", Colors.GREEN); p.setPuesto(sc.nextLine());
+        Colors.print("URL: ", Colors.GREEN); p.setUrl(sc.nextLine());
+        Colors.print("Facebook: ", Colors.GREEN); p.setFbk(sc.nextLine());
+        Colors.print("Instagram: ", Colors.GREEN); p.setIg(sc.nextLine());
         libro.agregar(p);
-        System.out.println("Registro guardado: " + p.nombreCompleto());
+        Colors.println("Registro guardado: " + p.nombreCompleto(), Colors.GREEN);
     }
 
-    private static void eliminarRegistro() {
-        System.out.print("Nombre completo a eliminar: ");
-        String nombre = sc.nextLine();
-        if (libro.eliminarPorNombre(nombre)) System.out.println("Eliminado.");
-        else System.out.println("No se encontró ese registro.");
-    }
-
-    private static void ponerCita() {
-        System.out.print("Nombre completo de la persona: ");
+    /**
+     * Permite al usuario buscar un registro por nombre completo.
+     */
+    private static void buscarRegistro() {
+        Colors.print("Nombre completo a buscar: ", Colors.GREEN + Colors.HIGH_INTENSITY);
         String nombre = sc.nextLine();
         Persona p = libro.buscarPorNombre(nombre);
-        if (p == null) { System.out.println("No encontrado."); return; }
+        if (p == null) Colors.println("Registro no encontrado.", Colors.RED);
+        else Colors.println("\n--- Registro ---\n" + p + "\n-----------------", Colors.GREEN);
+    }
+
+    /**
+     * Muestra el submenú de opciones para modificar un registro
+     * (añadir cita o nota).
+     */
+    private static void modificarRegistro(){
+        Colors.println("1. Poner cita a un registro (máx 2)", Colors.CYAN + Colors.ITALICS);
+        Colors.println("2. Escribir nota a un registro (máx 2)", Colors.CYAN + Colors.ITALICS);
+        String op = sc.nextLine().trim();
+            switch (op) {
+                case "1" -> ponerCita();
+                case "2" -> escribirNota();
+                default -> Colors.println("Opción inválida", Colors.RED);
+            }
+    }
+
+    /**
+     * Permite al usuario eliminar un registro por nombre completo.
+     */
+    private static void eliminarRegistro() {
+        Colors.print("Nombre completo a eliminar: ", Colors.MAGENTA);
+        String nombre = sc.nextLine();
+        if (libro.eliminarPorNombre(nombre)) Colors.println("Eliminado.", Colors.MAGENTA + Colors.HIGH_INTENSITY);
+        else Colors.println("No se encontró ese registro.", Colors.RED);
+    }
+
+    /**
+     * Permite al usuario añadir una nueva cita a una persona existente.
+     * 
+     * Si la persona no tiene espacio para más citas, se muestra un mensaje de error.
+     */
+    private static void ponerCita() {
+        Colors.print("Nombre completo de la persona: ", Colors.MAGENTA);
+        String nombre = sc.nextLine();
+        Persona p = libro.buscarPorNombre(nombre);
+        if (p == null) { Colors.println("No encontrado.", Colors.RED); return; }
         Cita c = new Cita();
-        System.out.print("Título de la cita: "); c.setTitulo(sc.nextLine());
-        System.out.print("Fecha (AAAA-MM-DD): "); c.setFecha(sc.nextLine());
-        System.out.print("Hora (HH:MM): "); c.setHora(sc.nextLine());
+        Colors.print("Título de la cita: ", Colors.MAGENTA); c.setTitulo(sc.nextLine());
+        Colors.print("Fecha (DD-MM-AAAA): ", Colors.MAGENTA); c.setFecha(sc.nextLine());
+        Colors.print("Hora (HH:MM): ", Colors.MAGENTA); c.setHora(sc.nextLine());
         if (p.agregarCita(c)) {
             libro.guardar();
-            System.out.println("Cita agregada.");
+            Colors.println("Cita agregada.", Colors.GREEN);
         } else {
-            System.out.println("No hay espacio: ya tiene 2 citas.");
+            Colors.println("No hay espacio: ya tiene 2 citas.", Colors.RED);
         }
     }
 
+    /**
+     * Permite al usuario añadir una nueva nota a una persona existente.
+     * 
+     * Si la persona no tiene espacio para más notas, se muestra un mensaje de error.
+     */
     private static void escribirNota() {
-        System.out.print("Nombre completo de la persona: ");
+        Colors.print("Nombre completo de la persona: ", Colors.MAGENTA);
         String nombre = sc.nextLine();
         Persona p = libro.buscarPorNombre(nombre);
-        if (p == null) { System.out.println("No encontrado."); return; }
-        System.out.print("Escribe la nota: ");
+        if (p == null) { Colors.println("No encontrado.", Colors.RED); return; }
+        Colors.print("Escribe la nota: ", Colors.MAGENTA);
         Nota n = new Nota(sc.nextLine());
         if (p.agregarNota(n)) {
             libro.guardar();
-            System.out.println("Nota agregada.");
+            Colors.println("Nota agregada.", Colors.GREEN);
         } else {
-            System.out.println("No hay espacio: ya tiene 2 notas.");
+            Colors.println("No hay espacio: ya tiene 2 notas.", Colors.RED);
         }
     }
 
-    private static void listarTodo() {
-        for (Persona p : libro.listar()) {
-            System.out.println("\n" + p);
-            System.out.println("--------------------------");
-        }
-        if (libro.listar().isEmpty()) {
-            System.out.println("No hay registros todavía.");
-        }
+    /**
+     * Permite al usuario imprimir el calendario de un mes y año específicos.
+     * 
+     * Solicita el mes y el año y utiliza el método estático de la clase
+     * {@link Calendario} para generar la salida.
+     */
+    private static void imprimirCalendario(){
+        Colors.print("Mes (MM, 01-12): ", Colors. GREEN);
+        String mes = sc.nextLine();
+        Colors.print("Año (AAAA, 4 dígitos): ", Colors.GREEN);
+        String anio = sc.nextLine();
+        Calendario.imprimirCalendario(mes, anio);
     }
 }
